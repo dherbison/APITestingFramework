@@ -1,0 +1,2 @@
+jenkins html: http://localhost:8080/
+jendins root: dherbison / Ed7nr77l123$

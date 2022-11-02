@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+    <listeners>
+        <listener class-name="com.w2a.APITestingFramework.listeners.ExtentListeners"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Customer API Test">
+        <classes>
+            <class name="com.w2a.APITestingFramework.testCases.CreateCustomerTest">
+                <methods>
+                    <include name="validateCreateCustomerAPIWithValidSecretKey"/>
+                    <include name="validateCreateCustomerAPIWithInValidSecretKey"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Delete API Test">
+        <classes>
+            <class name="com.w2a.APITestingFramework.testCases.DeleteCustomerTest">
+                <methods>
+                    <include name="validateDeleteCustomerAPIWithValidSecretKey"/>
+                    <include name="validateDeleteCustomerAPIWithInValidSecretKey"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
