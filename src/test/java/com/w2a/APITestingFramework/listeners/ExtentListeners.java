@@ -6,6 +6,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -13,7 +14,7 @@ import org.testng.ITestResult;
 import java.util.Arrays;
 import java.util.Date;
 
-public class ExtentListeners implements ITestListener {
+public class ExtentListeners implements ITestListener, ISuiteListener {
 
     static Date d = new Date();
     static String fileName = "Extent_" + d.toString().replace(":", "_").replace(" ", "_") + ".html";
@@ -72,6 +73,7 @@ public class ExtentListeners implements ITestListener {
         if (extent != null) {
             extent.flush();
         }
+        // TODO: Send email when complete here. fileName and dir above.
     }
 
 }
